@@ -1,0 +1,14 @@
+.root {
+    grid-area: nav;
+    border-right: 1px solid #D1D1D2;
+    padding: 24px 0;
+    max-height: calc(100vh - 72px - 48px);
+    overflow-y: scroll;
+    background-color: var(--background);
+    color: var(--text);
+}
+
+.error {
+    color: var(--text);
+    padding: 0 24px;
+}

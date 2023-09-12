@@ -1,0 +1,45 @@
+.node {
+    padding: 8px 22px;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    transition: 0.2s;
+}
+
+.node:hover {
+    background-color: var(--gray-second);
+}
+
+.node.expandable {
+    cursor: pointer;
+}
+
+.node.active {
+    background-color: var(--primary);
+    color: #fff;
+}
+
+.node:focus {
+    border: 1px solid var(--primary);
+}
+
+.node.rootActive:not(.active) {
+    background-color: var(--gray-first);
+}
+
+.node.rootActiveLevelTwo:not(.active) {
+    background-color: var(--gray-second);
+}
+
+.node path {
+    fill: var(--text);
+}
+
+.node.active path {
+    fill: #fff;
+}
+
+.arrow {
+    min-width: 16px;
+    transition: 0.3s;
+}

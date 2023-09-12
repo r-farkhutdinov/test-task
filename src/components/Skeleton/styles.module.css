@@ -1,0 +1,12 @@
+.root {
+    background-color: var(--gray-first);
+    height: 24px;
+    margin: 12px 0;
+    animation: animation 0.5s steps(5, start) infinite;
+}
+
+@keyframes animation {
+    to {
+      background-color: var(--skeleton-animation);
+    }
+}

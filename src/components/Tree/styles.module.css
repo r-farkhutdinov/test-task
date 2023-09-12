@@ -1,0 +1,20 @@
+.root {
+    animation: animation 0.5s;
+}
+
+@keyframes animation {
+    from { 
+        opacity: 0; 
+    }
+    to { 
+        opacity: 1; 
+    }
+}
+
+.active { 
+    background-color: var(--gray-first);
+}
+
+.activeLevelTwo { 
+    background-color: var(--gray-second);
+}
