@@ -4,9 +4,62 @@ const data = require('./data.json');
 const express = require('express');
 const app = express();
 const port = 3001;
+const responseTimeoutMs = 1000;
 
+const getPagesById = (id, pages) => pages[id];
+
+/**
+ * Adds all the pages in hierarchy to the response, so that if a nested child matches the query, the whole branch will be in the result
+ */
+const addPagesToRoot = ({ result, topLevelIds, item, entities }) => {
+  result.entities.pages[item.id] = getPagesById(item.id, entities);
+  if (item.level === 0 && !topLevelIds.includes(item.id)) {
+    // update topLevelIds to keep the correct structure
+    topLevelIds.push(item.id);
+  } else if (item.level !== 0) {
+    addPagesToRoot({ result, topLevelIds, item: getPagesById(item.parentId, entities), entities });
+  }
+};
+
+/**
+ * Returns the TOC data; if 'query' URL parameter is applied, filters the data as follows: 
+ * all elements (branches) which contain the query
+ */
 app.get('/toc', (req, res) => {
-    setTimeout(() => res.send(data), 1000);
+  const { query } = req.query;
+  let result = {};
+
+  const { entities: { pages }, topLevelIds } = data;
+
+  if (query) {
+    const queryLower = query.toLowerCase();
+    // Filter top level pages
+    result.topLevelIds = topLevelIds.filter(id => pages[id].title.toLowerCase().includes(queryLower));
+
+    // Filter all pages
+    const filteredPages = Object.values(pages).filter(page => page.title.toLowerCase().includes(queryLower));
+
+    result.entities = { pages: {} };
+
+    filteredPages.forEach(page => {
+      // Filter all child pages to exclude anchors having non-matching childs
+      const filteredChildren = page.pages?.filter(p => getPagesById(p, pages).title.toLowerCase().includes(queryLower));
+      page.pages = filteredChildren;
+      // Add all the nodes in the path of match, from the "lowest" to its root
+      addPagesToRoot({ result, topLevelIds: result.topLevelIds, item: page, entities: pages });
+    });
+  } else {
+    result = data;
+  }
+
+  setTimeout(() => res.send(result), responseTimeoutMs);
+});
+
+app.get('/toc/:id', (req, res) => {
+  const itemId = req.params.id;
+  const item = getPagesById(itemId, data.entities.pages);
+
+  setTimeout(() => res.send(item), responseTimeoutMs);
 });
 
 app.listen(port, () => {

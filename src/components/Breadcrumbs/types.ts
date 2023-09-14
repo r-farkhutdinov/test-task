@@ -6,3 +6,5 @@ export type Breadcrumb = {
 export interface BreadcrumbsProps {
     items?: Breadcrumb[];
 }
+
+export const breadcrumbsRootTestId = 'breadcrumbs-container';

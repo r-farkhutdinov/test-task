@@ -1,0 +1,54 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Breadcrumbs component should match the snapshot with items 1`] = `
+<DocumentFragment>
+  <div
+    class="root"
+    data-testid="breadcrumbs-container"
+  >
+    <p
+      class=""
+      data-testid="breadcrumbs-container/item-1"
+    >
+      Item 1
+    </p>
+    <p
+      data-testid="breadcrumbs-container/separator"
+    >
+      /
+    </p>
+    <p
+      class=""
+      data-testid="breadcrumbs-container/item-2"
+    >
+      Item 2
+    </p>
+    <p
+      data-testid="breadcrumbs-container/separator"
+    >
+      /
+    </p>
+    <p
+      class="active"
+      data-testid="breadcrumbs-container/item-3"
+    >
+      Item 3
+    </p>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`Breadcrumbs component should match the snapshot without items 1`] = `
+<DocumentFragment>
+  <div
+    class="root"
+    data-testid="breadcrumbs-container"
+  >
+    <p
+      data-testid="breadcrumbs-container/empty"
+    >
+      Select two levels or more to see the breadcrumbs
+    </p>
+  </div>
+</DocumentFragment>
+`;

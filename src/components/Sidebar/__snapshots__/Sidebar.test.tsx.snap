@@ -1,0 +1,151 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Sidebar component matches snapshot when data is present 1`] = `
+<DocumentFragment>
+  <aside
+    class="root"
+  >
+    <div
+      class="root"
+      data-testid="tree"
+    />
+  </aside>
+</DocumentFragment>
+`;
+
+exports[`Sidebar component matches snapshot when error 1`] = `
+<DocumentFragment>
+  <aside
+    class="root"
+  >
+    <p
+      class="error"
+    >
+      Error
+    </p>
+  </aside>
+</DocumentFragment>
+`;
+
+exports[`Sidebar component matches snapshot when loading 1`] = `
+<DocumentFragment>
+  <aside
+    class="root"
+  >
+    <div
+      class="root"
+      data-testid="skeleton"
+      style="margin-left: 0px; margin-right: 0px;"
+    />
+    <div
+      class="root"
+      data-testid="skeleton"
+      style="margin-left: 16px; margin-right: 32px;"
+    />
+    <div
+      class="root"
+      data-testid="skeleton"
+      style="margin-left: 32px; margin-right: 0px;"
+    />
+    <div
+      class="root"
+      data-testid="skeleton"
+      style="margin-left: 0px; margin-right: 32px;"
+    />
+    <div
+      class="root"
+      data-testid="skeleton"
+      style="margin-left: 16px; margin-right: 0px;"
+    />
+    <div
+      class="root"
+      data-testid="skeleton"
+      style="margin-left: 32px; margin-right: 32px;"
+    />
+    <div
+      class="root"
+      data-testid="skeleton"
+      style="margin-left: 0px; margin-right: 0px;"
+    />
+    <div
+      class="root"
+      data-testid="skeleton"
+      style="margin-left: 16px; margin-right: 32px;"
+    />
+    <div
+      class="root"
+      data-testid="skeleton"
+      style="margin-left: 32px; margin-right: 0px;"
+    />
+    <div
+      class="root"
+      data-testid="skeleton"
+      style="margin-left: 0px; margin-right: 32px;"
+    />
+    <div
+      class="root"
+      data-testid="skeleton"
+      style="margin-left: 16px; margin-right: 0px;"
+    />
+    <div
+      class="root"
+      data-testid="skeleton"
+      style="margin-left: 32px; margin-right: 32px;"
+    />
+    <div
+      class="root"
+      data-testid="skeleton"
+      style="margin-left: 0px; margin-right: 0px;"
+    />
+    <div
+      class="root"
+      data-testid="skeleton"
+      style="margin-left: 16px; margin-right: 32px;"
+    />
+    <div
+      class="root"
+      data-testid="skeleton"
+      style="margin-left: 32px; margin-right: 0px;"
+    />
+    <div
+      class="root"
+      data-testid="skeleton"
+      style="margin-left: 0px; margin-right: 32px;"
+    />
+    <div
+      class="root"
+      data-testid="skeleton"
+      style="margin-left: 16px; margin-right: 0px;"
+    />
+    <div
+      class="root"
+      data-testid="skeleton"
+      style="margin-left: 32px; margin-right: 32px;"
+    />
+    <div
+      class="root"
+      data-testid="skeleton"
+      style="margin-left: 0px; margin-right: 0px;"
+    />
+    <div
+      class="root"
+      data-testid="skeleton"
+      style="margin-left: 16px; margin-right: 32px;"
+    />
+  </aside>
+</DocumentFragment>
+`;
+
+exports[`Sidebar component matches snapshot with no data message when data is empty 1`] = `
+<DocumentFragment>
+  <aside
+    class="root"
+  >
+    <p
+      class="error"
+    >
+      No data, please reset the filter
+    </p>
+  </aside>
+</DocumentFragment>
+`;

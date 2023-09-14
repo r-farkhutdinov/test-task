@@ -1,14 +1,13 @@
-import { FC, memo, useCallback, useContext, useMemo, useState } from 'react';
+import { FC, memo, useCallback, useContext, useState } from 'react';
 import classNames from 'classnames/bind';
 import { ReactComponent as ArrowIcon } from '../../assets/arrow.svg';
 import { PagesContext } from '../../providers/PagesProvider';
 import type { Page } from '../../types';
 import { Tree } from '../Tree';
+import { basePadding, padding, nodeRootTestId } from './constants';
 import styles from './styles.module.css';
 
 const cx = classNames.bind(styles);
-const basePadding = 22;
-const padding = 16;
 
 /**
  * Core node component (represents a clickable page)
@@ -28,15 +27,15 @@ export const Node: FC<Page> = memo((props) => {
 
     const [isExpanded, setIsExpanded] = useState(false);
 
-    const isExpandable = useMemo(() => (Boolean(pages?.length)), [pages?.length]);
-    const isShowExpandedTree = useMemo(() => (isExpanded && isExpandable), [isExpandable, isExpanded]);
+    const isExpandable = (Boolean(pages?.length));
+    const isShowExpandedTree = isExpanded && isExpandable;
     const isActive = activePage === id;
-    const isActiveLevelTwo = useMemo(() => (level > 0), [level]);
-    const arrowTransform = useMemo(() => (`rotate(${isShowExpandedTree ? 90 : 0})`), [isShowExpandedTree]);
+    const isActiveLevelTwo = level > 0;
+    const arrowTransform = `rotate(${isShowExpandedTree ? 90 : 0})`;
 
-    const nodeStylePadding = useMemo(() => ({
+    const nodeStylePadding = {
         paddingLeft: basePadding + padding * level + (!isExpandable ? 20 : 0)
-    }), [isExpandable, level]);
+    };
 
     const nodeClassNames = cx(
         styles.node, {
@@ -55,7 +54,7 @@ export const Node: FC<Page> = memo((props) => {
 
     return (
         <>
-            <div className={nodeClassNames} style={nodeStylePadding} onClick={onNodeClick}>
+            <div data-testid={nodeRootTestId} className={nodeClassNames} style={nodeStylePadding} onClick={onNodeClick}>
                 {isExpandable && <ArrowIcon className={cx(styles.arrow)} transform={arrowTransform} />}
                 {title}
             </div>

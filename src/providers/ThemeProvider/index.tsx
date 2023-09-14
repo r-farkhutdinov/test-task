@@ -2,8 +2,11 @@ import { createContext, useCallback, useMemo, useState } from 'react';
 import { storage } from '../../utils/storage';
 import { type ThemeContextValue, type Props, Theme } from './types';
 
-const themeStorageKey = 'theme';
+export const themeStorageKey = 'theme';
 
+/**
+ * Context provider with theme logic
+ */
 export const ThemeContext = createContext<ThemeContextValue>({
     theme: Theme.Light,
 });

@@ -1,0 +1,86 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`TreeSkeleton component matches snapshot with count prop 1`] = `
+<DocumentFragment>
+  <div
+    class="root"
+    data-testid="skeleton"
+    style="margin-left: 0px; margin-right: 0px;"
+  />
+  <div
+    class="root"
+    data-testid="skeleton"
+    style="margin-left: 16px; margin-right: 32px;"
+  />
+  <div
+    class="root"
+    data-testid="skeleton"
+    style="margin-left: 32px; margin-right: 0px;"
+  />
+  <div
+    class="root"
+    data-testid="skeleton"
+    style="margin-left: 0px; margin-right: 32px;"
+  />
+  <div
+    class="root"
+    data-testid="skeleton"
+    style="margin-left: 16px; margin-right: 0px;"
+  />
+</DocumentFragment>
+`;
+
+exports[`TreeSkeleton component matches snapshot without count prop 1`] = `
+<DocumentFragment>
+  <div
+    class="root"
+    data-testid="skeleton"
+    style="margin-left: 0px; margin-right: 0px;"
+  />
+  <div
+    class="root"
+    data-testid="skeleton"
+    style="margin-left: 16px; margin-right: 32px;"
+  />
+  <div
+    class="root"
+    data-testid="skeleton"
+    style="margin-left: 16px; margin-right: 0px;"
+  />
+  <div
+    class="root"
+    data-testid="skeleton"
+    style="margin-left: 16px; margin-right: 32px;"
+  />
+  <div
+    class="root"
+    data-testid="skeleton"
+    style="margin-left: 32px; margin-right: 0px;"
+  />
+  <div
+    class="root"
+    data-testid="skeleton"
+    style="margin-left: 32px; margin-right: 32px;"
+  />
+  <div
+    class="root"
+    data-testid="skeleton"
+    style="margin-left: 32px; margin-right: 0px;"
+  />
+  <div
+    class="root"
+    data-testid="skeleton"
+    style="margin-left: 32px; margin-right: 32px;"
+  />
+  <div
+    class="root"
+    data-testid="skeleton"
+    style="margin-left: 0px; margin-right: 0px;"
+  />
+  <div
+    class="root"
+    data-testid="skeleton"
+    style="margin-left: 0px; margin-right: 0px;"
+  />
+</DocumentFragment>
+`;

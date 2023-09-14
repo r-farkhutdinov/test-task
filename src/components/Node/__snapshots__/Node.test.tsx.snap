@@ -1,0 +1,31 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Node component should match snapshot – expandable 1`] = `
+<DocumentFragment>
+  <div
+    class="node expandable"
+    data-testid="node-container"
+    style="padding-left: 22px;"
+  >
+    <svg
+      class="arrow"
+      transform="rotate(0)"
+    >
+      arrow.svg
+    </svg>
+    Node
+  </div>
+</DocumentFragment>
+`;
+
+exports[`Node component should match snapshot – unexpandable 1`] = `
+<DocumentFragment>
+  <div
+    class="node"
+    data-testid="node-container"
+    style="padding-left: 42px;"
+  >
+    Node
+  </div>
+</DocumentFragment>
+`;

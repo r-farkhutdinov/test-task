@@ -1,3 +1,6 @@
+/**
+ * Local storage utility
+ */
 export const storage = {
     set: (key: string, value: string) => {
         localStorage.setItem(key, value);

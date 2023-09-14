@@ -1,6 +1,5 @@
-
 import { render, screen } from '@testing-library/react';
-import { Breadcrumb } from './types';
+import { type Breadcrumb, breadcrumbsRootTestId } from './types';
 import { Breadcrumbs } from '.';
 
 const items: Breadcrumb[] = [
@@ -18,14 +17,33 @@ const items: Breadcrumb[] = [
     },
 ];
 
-test('renders empty breadcrumbs', () => {
-    render(<Breadcrumbs />);
-    const placeholder = screen.getByText(/Select two levels or more to see the breadcrumbs/i);
-    expect(placeholder).toBeInTheDocument();
-});
+describe('Breadcrumbs component', () => {
+    it('matches the snapshot with items', () => {
+        const { asFragment } = render(<Breadcrumbs items={items} />);
+        expect(asFragment()).toMatchSnapshot();
+    });
 
-test('renders breadcrumbs with 2 levels', () => {
-    render(<Breadcrumbs items={items} />);
-    const placeholder = screen.getByText(/Item 1/i);
-    expect(placeholder).toBeInTheDocument();
+    it('matches the snapshot without items', () => {
+        const { asFragment } = render(<Breadcrumbs />);
+        expect(asFragment()).toMatchSnapshot();
+    });
+
+    it('should render breadcrumb items correctly', () => {
+        render(<Breadcrumbs items={items.slice(0, 2)} />);
+
+        expect(screen.getByTestId(`${breadcrumbsRootTestId}/item-1`)).toHaveTextContent(items[0].title);
+        expect(screen.getByTestId(`${breadcrumbsRootTestId}/item-2`)).toHaveTextContent(items[1].title);
+        expect(screen.getByTestId(breadcrumbsRootTestId)).toContainElement(screen.getByTestId(`${breadcrumbsRootTestId}/separator`));
+    });
+
+    it('should make the last breadcrumb active', () => {
+        render(<Breadcrumbs items={items.slice(0, 2)} />);
+
+        expect(screen.getByTestId(`${breadcrumbsRootTestId}/item-2`).classList.contains('active')).toBe(true);
+    });
+
+    it('should render empty message when no items present', () => {
+        render(<Breadcrumbs />);
+        expect(screen.getByTestId(`${breadcrumbsRootTestId}/empty`)).toHaveTextContent('Select two levels or more to see the breadcrumbs');
+    });
 });

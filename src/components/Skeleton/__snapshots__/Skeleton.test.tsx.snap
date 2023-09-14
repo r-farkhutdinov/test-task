@@ -1,0 +1,41 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Skeleton component matches snapshot with isPaddingRight 1`] = `
+<DocumentFragment>
+  <div
+    class="root"
+    data-testid="skeleton"
+    style="margin-left: 0px; margin-right: 32px;"
+  />
+</DocumentFragment>
+`;
+
+exports[`Skeleton component matches snapshot with level = 2 1`] = `
+<DocumentFragment>
+  <div
+    class="root"
+    data-testid="skeleton"
+    style="margin-left: 32px; margin-right: 0px;"
+  />
+</DocumentFragment>
+`;
+
+exports[`Skeleton component matches snapshot with no props 1`] = `
+<DocumentFragment>
+  <div
+    class="root"
+    data-testid="skeleton"
+    style="margin-left: 0px; margin-right: 0px;"
+  />
+</DocumentFragment>
+`;
+
+exports[`Skeleton component matches snapshot with width 1`] = `
+<DocumentFragment>
+  <div
+    class="root"
+    data-testid="skeleton"
+    style="margin-left: 0px; margin-right: 0px; width: 100px;"
+  />
+</DocumentFragment>
+`;

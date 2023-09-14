@@ -1,0 +1,28 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Tree component matches snapshot with pages and isActive 1`] = `
+<DocumentFragment>
+  <div
+    class="root active"
+    data-testid="tree"
+  />
+</DocumentFragment>
+`;
+
+exports[`Tree component matches snapshot with pages, isActive, and isActiveLevelTwo 1`] = `
+<DocumentFragment>
+  <div
+    class="root active activeLevelTwo"
+    data-testid="tree"
+  />
+</DocumentFragment>
+`;
+
+exports[`Tree component matches snapshot without pages 1`] = `
+<DocumentFragment>
+  <div
+    class="root"
+    data-testid="tree"
+  />
+</DocumentFragment>
+`;
