@@ -32,4 +32,7 @@ Install dependencies
 
 Start the server
 
-![Image](screenshot.png)
+## Light theme
+![Light theme screenshot](./screenshots/light-theme-filter.png)
+## Dark theme
+![Dark theme screenshot](./screenshots/dark-theme.png)
