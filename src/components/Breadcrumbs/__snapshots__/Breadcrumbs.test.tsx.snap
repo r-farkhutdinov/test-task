@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Breadcrumbs component should match the snapshot with items 1`] = `
+exports[`Breadcrumbs component matches the snapshot with items 1`] = `
 <DocumentFragment>
   <div
     class="root"
@@ -38,7 +38,7 @@ exports[`Breadcrumbs component should match the snapshot with items 1`] = `
 </DocumentFragment>
 `;
 
-exports[`Breadcrumbs component should match the snapshot without items 1`] = `
+exports[`Breadcrumbs component matches the snapshot without items 1`] = `
 <DocumentFragment>
   <div
     class="root"
