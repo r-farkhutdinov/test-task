@@ -56,6 +56,9 @@ app.get('/toc', (req, res) => {
   setTimeout(() => res.send(result), responseTimeoutMs);
 });
 
+/**
+ * Get the page by ID
+ */
 app.get('/toc/:id', (req, res) => {
   const itemId = req.params.id;
   const item = getPagesById(itemId, data.entities.pages);
