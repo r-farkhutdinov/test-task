@@ -8,7 +8,7 @@
     grid-template-rows: 72px 1fr 104px;
 }
 
-.root > header {
+.root header {
     grid-area: head;
     background-color: #27282C;
     display: flex;
@@ -24,7 +24,7 @@
     gap: 12px;
 }
   
-.root > main {
+.root main {
     grid-area: main;
     min-height: calc(100vh - 72px - 104px - 80px);
     padding: 40px 80px;
@@ -42,7 +42,7 @@
     white-space: pre-wrap  
  }
   
-.root > footer {
+.root footer {
     grid-area: foot;
     background-color: #27282C;
     color: #fff;
