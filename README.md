@@ -31,3 +31,5 @@ Install dependencies
 ### `npm start`
 
 Start the server
+
+![Image](screenshot.png)
