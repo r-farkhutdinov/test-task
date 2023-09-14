@@ -28,6 +28,7 @@ export const Main = () => {
     };
 
     const onFilterClear = () => {
+        setQuery?.('');
         load?.();
     };
 
