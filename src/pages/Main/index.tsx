@@ -1,5 +1,5 @@
 
-import { ChangeEvent, useCallback, useContext, useMemo, useState } from 'react';
+import { ChangeEvent, useContext, useMemo, useState } from 'react';
 import { ThemeContext } from '../../providers/ThemeProvider';
 import { PagesContext } from '../../providers/PagesProvider';
 import { getPagesPath } from '../../utils/getPagesPath';
