@@ -4,10 +4,10 @@ import { Main } from './pages/Main';
 
 export const App = () => {
   return (
-    <ThemeProvider>
-      <PagesProvider>
+    <PagesProvider>
+      <ThemeProvider>
         <Main />
-      </PagesProvider>
-    </ThemeProvider>
+      </ThemeProvider>
+    </PagesProvider>
   );
 };
