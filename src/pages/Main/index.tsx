@@ -1,5 +1,5 @@
 
-import { ChangeEvent, useContext } from 'react';
+import { ChangeEvent, useCallback, useContext, useMemo, useState } from 'react';
 import { ThemeContext } from '../../providers/ThemeProvider';
 import { PagesContext } from '../../providers/PagesProvider';
 import { getPagesPath } from '../../utils/getPagesPath';
@@ -14,10 +14,15 @@ import styles from './styles.module.css';
  * Page to show the example of how sidebar works
  */
 export const Main = () => {
+    const [query, setQuery] = useState('');
     // Pages context here is only used to display breadcrumbs, 
     // sidebar component itself accesses context so it can be used outside this page
-    const { data, activePage, query, setQuery, load } = useContext(PagesContext);
+    const { data, activePage, load } = useContext(PagesContext);
     const { theme, toggleTheme } = useContext(ThemeContext);
+
+    const breadcrumbItems = useMemo(
+        () => getPagesPath(data?.entities, getPageById(data?.entities, activePage)
+        ), [activePage, data?.entities]);
 
     const onFilterChange = (e: ChangeEvent<HTMLInputElement>) => {
         setQuery?.(e.target.value ?? '');
@@ -47,7 +52,7 @@ export const Main = () => {
             <Sidebar />
             <main>
                 <h1>Solution description</h1>
-                <Breadcrumbs items={getPagesPath(data?.entities, getPageById(data?.entities, activePage))} />
+                <Breadcrumbs items={breadcrumbItems} />
                 <Content />
             </main>
             <footer>Ruslan Farkhutdinov</footer>

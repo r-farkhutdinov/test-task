@@ -1,7 +1,9 @@
+import { memo } from 'react';
+
 /**
  * Content component
  */
-export const Content = () => (
+export const Content = memo(() => (
     <section>
         <h2>General approach</h2>
         <p>In the current implementation, the main components are <code>{'<Sidebar />'}</code> and <code>{'<PagesProvider />'}</code></p>
@@ -39,4 +41,4 @@ export const Content = () => (
         </p>
         <p>All the components and utility functions are covered with unit and snapshot tests</p>
     </section>
-);
+));

@@ -1,4 +1,4 @@
-import { useContext } from 'react';
+import { memo, useContext } from 'react';
 import { PagesContext } from '../../providers/PagesProvider';
 import { Tree } from '../Tree';
 import { TreeSkeleton } from '../TreeSkeleton';
@@ -9,7 +9,7 @@ export const noDataText = 'No data, please reset the filter';
 /**
  * Core component to be exported, has all the TOC logic
  */
-export const Sidebar = () => {
+export const Sidebar = memo(() => {
     const { data, loading, error } = useContext(PagesContext);
 
     let content;
@@ -29,4 +29,4 @@ export const Sidebar = () => {
             {content}
         </aside>
     );
-};
+});

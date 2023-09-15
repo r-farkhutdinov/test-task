@@ -1,4 +1,4 @@
-import { FC, Fragment } from 'react';
+import { FC, Fragment, memo } from 'react';
 import classNames from 'classnames/bind';
 import { breadcrumbsRootTestId, type BreadcrumbsProps } from './types';
 import styles from './styles.module.css';
@@ -8,7 +8,7 @@ const cx = classNames.bind(styles);
 /**
  * Breadcrumbs to display the current path in navigation
  */
-export const Breadcrumbs: FC<BreadcrumbsProps> = ({ items }) => (
+export const Breadcrumbs: FC<BreadcrumbsProps> = memo(({ items }) => (
     <div className={styles.root} data-testid={breadcrumbsRootTestId}>
         {items && items?.length > 1 ? (
             items.map(({ title, id }, index) => (
@@ -26,4 +26,4 @@ export const Breadcrumbs: FC<BreadcrumbsProps> = ({ items }) => (
             <p data-testid={`${breadcrumbsRootTestId}/empty`}>Select two levels or more to see the breadcrumbs</p>
         )}
     </div>
-);
+));

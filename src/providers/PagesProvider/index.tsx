@@ -13,7 +13,6 @@ const errorMessage = 'Error fetching data. It is likely that the server is not r
 export const PagesProvider = ({ children }: Props) => {
     const [activePage, setActivePage] = useState<string>();
     const [data, setData] = useState<TableData>();
-    const [query, setQuery] = useState('');
     const [error, setError] = useState<string>();
     const [loading, setLoading] = useState(false);
 
@@ -44,13 +43,11 @@ export const PagesProvider = ({ children }: Props) => {
     const value = useMemo(() => ({
         activePage,
         data,
-        query,
         loading,
         error,
         load,
-        setQuery,
         changeActivePage
-    }), [activePage, changeActivePage, data, error, loading, query]);
+    }), [activePage, changeActivePage, data, error, loading]);
 
     return (
         <PagesContext.Provider value={value}>{children}</PagesContext.Provider>
